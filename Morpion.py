@@ -266,30 +266,5 @@ while running:
 
 
 
-#Création de la base de données
-
-
-
-#for j in range (100):
-
- #   Grille=[[random.randint(-1,1) for i in range (3)] for j in range(3)]
-  #  Grille=np.array(Grille)
-#
- #   while isReel(Grille)==False or AQuiDeJouer(Grille)!=1 or isFinish(Grille)==True:
-  #      Grille=[[random.randint(-1,1) for i in range (3)] for j in range(3)]
-   #     Grille=np.array(Grille)
-    #print(Grille)
-    #Vecteur=[]
-    #for val in Grille:
-    #    for val2 in val:
-    #        Vecteur.append(val2)
-    #MeilleurCoup=BonCoup(Grille,1)[0]
-    #NumeroCoup=MeilleurCoup[0]*3+MeilleurCoup[1]+1
-    #f.write(str(Vecteur))
-    #f.write(","+str(NumeroCoup))
-    #f.write("\n")
-#f.close()
-
-
 
 
