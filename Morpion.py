@@ -6,8 +6,9 @@ from sklearn.neural_network import MLPClassifier
 from sklearn import preprocessing
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import tree
+
 pg.init()
-#CrÃ©ation de la grille vide
+#Création de la grille vide
 #Une croix x=1 et un rond o=-1 ou vide=0
 Grille=[[0,0,0] for i in range (3)]
 Grille=np.array(Grille)
@@ -32,7 +33,7 @@ def Reset():
 
 
 
-#Fonction d'Ã©valuation de victoire
+#Fonction d'évaluation de victoire
 def iswon(Grille):
     #On regarde d'abord les victoires possibles sur les lignes et les colonnes en balayant le tableau
     l=0
@@ -112,17 +113,17 @@ def NumeroTour(Grille):
 def Exploration(Grille,Joueur,NP,Val):
     for Coup in CoupsPossible(Grille):
             GrilleTemp2=copy.deepcopy(Grille)
-            print("GrilleTemporaire tour joueur crÃ©Ã©")
+            print("GrilleTemporaire tour joueur créé")
             GrilleTemp2[Coup[0]][Coup[1]]=Joueur
-            print("COup joueur jouÃ©")
+            print("COup joueur joué")
             print(GrilleTemp2)
             NP+=1
             print(NP)
             if isFinish(GrilleTemp2)==True:
-                print("Partie finie detectÃ©")
+                print("Partie finie detecté")
                 if Joueur==iswon(GrilleTemp2):
                     Val+=1
-                    print("Partie gagnÃ©")
+                    print("Partie gagné")
                 elif Joueur==-iswon(GrilleTemp2):
                     Val-=1
                     print("Partie Perdue")
@@ -130,17 +131,17 @@ def Exploration(Grille,Joueur,NP,Val):
                 print("Coup enemie")
                 for coupenemi in CoupsPossible(GrilleTemp2):
                     GrilleTemp3=copy.deepcopy(GrilleTemp2)
-                    print("Grille temporaire tour enemi crÃ©Ã©")
+                    print("Grille temporaire tour enemi créé")
                     GrilleTemp3[coupenemi[0]][coupenemi[1]]=-Joueur
-                    print("COup ennemi jouÃ©")
+                    print("COup ennemi joué")
                     print(GrilleTemp3)
                     NP+=1
                     print(NP)
                     if isFinish(GrilleTemp3)==True:
-                        print("Partie finie detectÃ©")
+                        print("Partie finie detecté")
                         if Joueur==iswon(GrilleTemp3):
                             Val+=1
-                            print("Partie gagnÃ©")
+                            print("Partie gagné")
                         elif Joueur==-iswon(GrilleTemp3):
                             Val-=1
                             print("Partie Perdue")
@@ -154,7 +155,7 @@ def Exploration(Grille,Joueur,NP,Val):
 def BonCoup(Grille,Joueur):
     Arbre=[]
     nbpossible=str(len(CoupsPossible(Grille)))
-    print("Nombre de coups Ã  balayer="+nbpossible)
+    print("Nombre de coups à balayer="+nbpossible)
     for Coup in CoupsPossible(Grille):
         NP=1
         Val=0
@@ -195,7 +196,7 @@ def Jouer(coup,joueur):
 
 
 
-#CrÃ©ation de la fenÃªtre de jeu
+#Création de la fenêtre de jeu
 pg.display.set_caption("Morpion")
 screen=pg.display.set_mode((500,500))
 grille_graph=pg.image.load('D:\PROJECTS\IA_POKER\ASSETS\grille.jpg')
@@ -220,7 +221,7 @@ while running:
                 screen.blit(croix,(75+j*350/3+10,10+i*350/3+10))
             elif Grille[i][j]==-1:
                 screen.blit(rond,(75+j*350/3+10,10+i*350/3+10))
-    #RÃ©cupÃ©ration des coordonnÃ©es de la souris
+    #Récupération des coordonnées de la souris
     mouse = pg.mouse.get_pos()
     if isFinish(Grille)==True:
         mouse=[0,0]
@@ -265,7 +266,7 @@ while running:
 
 
 
-#CrÃ©ation de la base de donnÃ©es
+#Création de la base de données
 
 
 
